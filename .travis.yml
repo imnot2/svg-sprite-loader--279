@@ -1,4 +1,4 @@
 install:
   - npm install
 script :
-  - grunt latest
+  - bundle exec grunt latest
