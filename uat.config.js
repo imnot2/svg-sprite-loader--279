@@ -28,6 +28,17 @@ module.exports = {
             })
         }, {
             test: /\.svg$/,
+            issuer: {
+                test: /\.jsx?$/
+            },
+            loader: 'svgr/webpack',
+            options: {
+                ids: true,
+                dimensions: true,
+                title: false
+            }
+        }, {
+            test: /\.svg$/,
             include: path.resolve(outPut + 'icons'),
             issuer: {
                 test: /\.(less|css)?$/
@@ -52,17 +63,6 @@ module.exports = {
                     }]
                 }
             }]
-        }, {
-            test: /\.svg$/,
-            issuer: {
-                test: /\.jsx?$/
-            },
-            loader: 'svgr/webpack',
-            options: {
-                ids: true,
-                dimensions: true,
-                title: false
-            }
         }]
     },
     plugins: [
